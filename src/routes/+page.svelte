@@ -40,20 +40,19 @@
 	</header>
 
 	<!-- Hero Section -->
-	<div class="container mx-auto px-4 py-16">
+	<div class="container mx-auto px-4 py-16 min-h-[calc(100vh-73px)]">
 		<div class="text-center mb-20">
 			<h1 class="text-7xl font-bold text-white mb-6 tracking-tight">
 				<span class="text-red-400">Latin</span><span class="text-white">Craft</span>
 			</h1>
-			<p class="text-xl text-stone-400 mb-8 font-light">The Semi-official Minecraft Server for the Roxbury Latin School</p>
+			<p class="text-xl text-stone-300 mb-8 font-normal">The semi-official Minecraft Server of <a href="https://www.roxburylatin.org/" class=" hover:underline cursor-pointer ">The Roxbury Latin School</a></p>
 			<div class="flex gap-4 justify-center flex-wrap">
-				<Button size="lg" class="bg-white text-stone-900 hover:bg-stone-100 px-8 font-medium" onclick="location.href = '/discord'">
+				<Button size="lg" class="bg-white text-stone-900 hover:bg-stone-100 px-8 font-medium" onclick={() => (location.href = '/discord')}>
 					Join Discord
 				</Button>
                 <Button
                     size="lg"
-                    variant="outline"
-                    class="border-stone-700 text-white hover:bg-stone-900 font-medium"
+                    class="bg-stone-900 border border-stone-700 text-white hover:bg-stone-800 font-medium"
                     onclick={() => (location.href = '/status')}
                 >
                     Server Status
@@ -71,10 +70,12 @@
 					<Card.Header>
 						<div class="flex justify-between items-start">
 							<Card.Title class="text-2xl text-white font-semibold">LatinCraft Creative</Card.Title>
-							<Badge class="bg-green-500/10 text-green-400 border border-green-500/20">ONLINE</Badge>
+							<a href="/status">
+								<Badge class="bg-green-500/10 text-green-400 border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-colors">ONLINE</Badge>
+							</a>
 						</div>
 						<Card.Description class="text-stone-400">
-							Unleash your creativity in our sandbox world
+							Unleash your creativity in the full creative world
 						</Card.Description>
 					</Card.Header>
 					<Card.Content class="text-stone-300">
@@ -93,14 +94,14 @@
 							</div>
 							<div class="mt-6 p-4 bg-stone-950 rounded-lg border border-stone-800">
 								<p class="text-xs text-stone-500 mb-2 uppercase tracking-wider">Server IP</p>
-								<code class="text-green-400 font-mono text-sm">creative.latincraft.com</code>
+								<code class="text-green-400 font-mono text-sm">build.latincraft.net</code>
 							</div>
 						</div>
 					</Card.Content>
 					<Card.Footer>
 						<Button 
 							class="w-full bg-stone-800 hover:bg-stone-700 text-white border-0 relative overflow-hidden"
-							onclick={() => copyToClipboard('creative.latincraft.com')}
+							onclick={() => copyToClipboard('build.latincraft.net')}
 						>
 							<span class="transition-all duration-300 ease-out" class:opacity-0={copied} class:scale-95={copied}>
 								Copy IP Address
@@ -119,7 +120,9 @@
 					<Card.Header>
 						<div class="flex justify-between items-start">
 							<Card.Title class="text-2xl text-white font-semibold">LatinCraft Season 2</Card.Title>
-							<Badge class="bg-amber-500/10 text-amber-400 border border-amber-500/20">COMING SOON</Badge>
+							<a href="/status">
+								<Badge class="bg-amber-500/10 text-amber-400 border border-amber-500/20 cursor-pointer hover:bg-amber-500/20 transition-colors">COMING SOON</Badge>
+							</a>
 						</div>
 						<Card.Description class="text-stone-400">
 							A brand new survival adventure begins
@@ -137,7 +140,7 @@
 							</div>
 							<div class="flex items-center gap-3">
 								<div class="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
-								<span class="text-sm">Community-driven gameplay</span>
+								<span class="text-sm">Runs throughout winter break</span>
 							</div>
 							<div class="mt-6 p-4 bg-stone-950 rounded-lg border border-stone-800">
 								<p class="text-xs text-stone-500 mb-2 uppercase tracking-wider">Launches</p>

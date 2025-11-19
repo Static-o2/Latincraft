@@ -111,7 +111,7 @@
 	</header>
 
 	<!-- Main Content -->
-	<div class="container mx-auto px-4 py-16">
+	<div class="container mx-auto px-4 py-16 min-h-[calc(100vh-73px)]">
 		<div class="max-w-4xl mx-auto">
 			<h1 class="text-4xl font-bold text-white mb-2 tracking-tight">Server Status</h1>
 			<p class="text-stone-400 mb-12">Real-time server info and online players</p>

@@ -55,7 +55,7 @@
 	</header>
 
 	<!-- Main Content -->
-	<div class="container mx-auto px-4 py-16">
+	<div class="container mx-auto px-4 py-16 min-h-[calc(100vh-73px)]">
 		<div class="max-w-xl mx-auto">
 			<div class="text-center mb-12">
 				<h1 class="text-5xl font-bold text-white mb-4 tracking-tight">Join The Discord</h1>
