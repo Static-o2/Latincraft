@@ -125,7 +125,7 @@
 							</a>
 						</div>
 						<Card.Description class="text-stone-400">
-							A brand new survival adventure begins
+							A brand new season begins
 						</Card.Description>
 					</Card.Header>
 					<Card.Content class="text-stone-300">
