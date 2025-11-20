@@ -96,7 +96,7 @@
 				</Card.Content>
 				<Card.Footer>
 					<Button 
-						class="w-full bg-stone-800 hover:bg-stone-700 text-white border-0"
+						class="w-full cursor-pointer bg-stone-800 hover:bg-stone-700 text-white border-0"
 						onclick={() => window.open('https://discord.gg/UXpd2YnQwH', '_blank')}
 					>
 						Apply to join

@@ -47,12 +47,12 @@
 			</h1>
 			<p class="text-xl text-stone-300 mb-8 font-normal">The semi-official Minecraft Server of <a href="https://www.roxburylatin.org/" class=" hover:underline cursor-pointer ">The Roxbury Latin School</a></p>
 			<div class="flex gap-4 justify-center flex-wrap">
-				<Button size="lg" class="bg-white text-stone-900 hover:bg-stone-100 px-8 font-medium" onclick={() => (location.href = '/discord')}>
+				<Button size="lg" class="bg-white text-stone-900 hover:bg-stone-100 cursor-pointer px-8 font-medium" onclick={() => (location.href = '/discord')}>
 					Join Discord
 				</Button>
                 <Button
                     size="lg"
-                    class="bg-stone-900 border border-stone-700 text-white hover:bg-stone-800 font-medium"
+                    class="bg-stone-900 border border-stone-700 cursor-pointer text-white hover:bg-stone-800 font-medium"
                     onclick={() => (location.href = '/status')}
                 >
                     Server Status
@@ -100,7 +100,7 @@
 					</Card.Content>
 					<Card.Footer>
 						<Button 
-							class="w-full bg-stone-800 hover:bg-stone-700 text-white border-0 relative overflow-hidden"
+							class="w-full bg-stone-800 hover:bg-stone-700 text-white border-0 relative cursor-pointer overflow-hidden"
 							onclick={() => copyToClipboard('build.latincraft.net')}
 						>
 							<span class="transition-all duration-300 ease-out" class:opacity-0={copied} class:scale-95={copied}>
