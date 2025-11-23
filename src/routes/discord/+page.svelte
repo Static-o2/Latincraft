@@ -116,7 +116,7 @@
 	<footer class="bg-stone-950 py-8 border-t border-stone-900">
 		<div class="container mx-auto px-4 text-center text-stone-400">
 			<p>&copy; 2025 LatinCraft. All rights reserved.</p>
-			<p class="text-sm mt-2">Not affiliated with Mojang or Microsoft</p>
+			<p class="text-sm mt-2">Not affiliated with Mojang or Microsoft | View source on <a class=" hover:underline" href="https://github.com/Static-o2/Latincraft">GitHub</a> </p>
 		</div>
 	</footer>
 </div>
