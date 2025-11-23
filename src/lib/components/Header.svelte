@@ -17,17 +17,17 @@
 			<nav class="hidden sm:flex gap-4 items-center">
 				<a 
 					href="/status" 
-					class="{currentPage === 'status' ? 'text-green-500 font-medium' : 'text-stone-300 hover:text-green-500'} transition-colors"
+					class="{currentPage === 'status' ? 'text-green-400 font-medium' : 'text-stone-300 hover:text-green-300'} transition-colors"
 				>
 					Server Status
 				</a>
 				<a 
 					href="/discord" 
-					class="{currentPage === 'discord' ? 'text-green-500 font-medium' : 'text-stone-300 hover:text-green-500'} transition-colors"
+					class="{currentPage === 'discord' ? 'text-indigo-400 font-medium' : 'text-stone-300 hover:text-indigo-300'} transition-colors"
 				>
 					Discord
 				</a>
-				<button class="text-stone-300 hover:text-green-500 transition-colors">Rules</button>
+				<button class="text-stone-300 hover:text-orange-300 transition-colors">Rules</button>
 			</nav>
 
 			<!-- Mobile -->
