@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import { onMount } from 'svelte';
+	import Header from '$lib/components/Header.svelte';
 
 	let countdown = $state(20);
 
@@ -36,23 +37,7 @@
 </svelte:head>
 
 <div class="min-h-screen bg-stone-950">
-	<!-- Header -->
-	<header class="bg-stone-900 border-b border-stone-800">
-		<div class="container mx-auto px-4 py-4">
-			<div class="flex justify-between items-center">
-				<a href="/">
-					<h1 class="text-2xl font-bold">
-						<span class="text-indigo-400">Latin</span><span class="text-stone-200">Craft</span>
-					</h1>
-				</a>
-				<nav class="flex gap-4 items-center">
-					<a href="/status" class="text-stone-300 hover:text-green-500 transition-colors">Server Status</a>
-					<a href="https://discord.gg/UXpd2YnQwH" target="_blank" rel="noopener noreferrer" class="text-green-500 transition-colors font-medium">Discord</a>
-					<button class="text-stone-300 hover:text-green-500 transition-colors">Rules</button>
-				</nav>
-			</div>
-		</div>
-	</header>
+	<Header logoColor="indigo" currentPage="discord" />
 
 	<!-- Main Content -->
 	<div class="container mx-auto px-4 py-16 min-h-[calc(100vh-73px)]">

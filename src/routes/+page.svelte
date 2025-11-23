@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import { Badge } from '$lib/components/ui/badge';
+	import Header from '$lib/components/Header.svelte';
 
 	let copied = $state(false);
 
@@ -23,21 +24,7 @@
 </svelte:head>
 
 <div class="min-h-screen bg-stone-950">
-	<!-- Header -->
-	<header class="bg-stone-900 border-b border-stone-800">
-		<div class="container mx-auto px-4 py-4">
-			<div class="flex justify-between items-center">
-				<h1 class="text-2xl font-bold">
-					<span class="text-red-400">Latin</span><span class="text-stone-200">Craft</span>
-				</h1>
-				<nav class="flex gap-4 items-center">
-					<a href="/status" class="text-stone-300 hover:text-green-500 transition-colors">Server Status</a>
-					<a href="/discord" class="text-stone-300 hover:text-green-500 transition-colors">Discord</a>
-					<button class="text-stone-300 hover:text-green-500 transition-colors">Rules</button>
-				</nav>
-			</div>
-		</div>
-	</header>
+	<Header logoColor="red" currentPage="home" />
 
 	<!-- Hero Section -->
 	<div class="container mx-auto px-4 py-16 min-h-[calc(100vh-73px)]">
