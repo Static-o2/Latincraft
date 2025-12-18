@@ -47,7 +47,7 @@
 				<p class="text-xl text-zinc-400">Connect with the Roxbury Latin community</p>
 			</div>
 
-			<Card.Root class="bg-zinc-900/60 border-zinc-800/50 backdrop-blur-sm">
+			<Card.Root class="bg-zinc-900/30 border-zinc-700 backdrop-blur-sm">
 				<Card.Header class="pb-2">
 					<Card.Title class="text-2xl text-white font-semibold text-center">RL Foxes Discord Server</Card.Title>
 					<Card.Description class="text-zinc-400 text-center text-base">
@@ -73,7 +73,7 @@
 							<span class="text-sm text-zinc-300">Participate in friday game nights</span>
 						</div>
 						
-						<div class="mt-8 p-4 bg-black/40 rounded-lg border border-white/5 text-center">
+						<div class="mt-8 p-4 bg-black/40 rounded-lg border border-zinc-800 text-center">
 							<p class="text-xs text-zinc-500 mb-2 uppercase tracking-wider font-medium">Redirecting in {countdown} second{countdown !== 1 ? 's' : ''}...</p>
 							<code class="text-indigo-400 font-mono text-sm">discord.gg/UXpd2YnQwH</code>
 						</div>

@@ -56,7 +56,7 @@
 			
 			<div class="grid md:grid-cols-2 gap-8">
 				<!-- Creative Server -->
-				<Card.Root class="relative bg-zinc-900/30 border-zinc-800/50 hover:border-zinc-700 transition-all overflow-hidden group backdrop-blur-sm">
+				<Card.Root class="relative bg-zinc-900/30 border-zinc-700 transition-all overflow-hidden group backdrop-blur-sm">
 					<Card.Header>
 						<div class="flex justify-between items-start">
 							<Card.Title class="text-2xl text-white font-semibold">LatinCraft Creative</Card.Title>
@@ -106,7 +106,7 @@
 				</Card.Root>
 
 				<!-- Season 2 Server -->
-				<Card.Root class="relative bg-zinc-900/30 border-zinc-800/50 hover:border-zinc-700 transition-all overflow-hidden group backdrop-blur-sm">
+				<Card.Root class="relative bg-zinc-900/30 border-zinc-700 transition-all overflow-hidden group backdrop-blur-sm">
 					<Card.Header>
 						<div class="flex justify-between items-start">
 							<Card.Title class="text-2xl text-white font-semibold">LatinCraft Season 2</Card.Title>

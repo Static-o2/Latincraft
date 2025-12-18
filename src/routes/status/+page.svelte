@@ -103,7 +103,7 @@
 
 			<div class="space-y-8">
 				{#each servers as server}
-					<Card.Root class="bg-zinc-900/30 border-zinc-800/50 backdrop-blur-sm">
+					<Card.Root class="bg-zinc-900/30 border-zinc-700/90 backdrop-blur-sm">
 						<Card.Header>
 							<div class="flex justify-between items-start">
 								<div>
