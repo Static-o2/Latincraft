@@ -23,7 +23,7 @@
 			onlinePlayers: [],
 			ip: null,
 			version: '1.21.10',
-			launchDate: 'December 19th, 2025',
+			launchDate: 'December 21st, 2025',
 			displayIp: 'TBA'
 		}
 	]);
@@ -87,28 +87,28 @@
 	<title>Server Status - LatinCraft</title>
 	<style>
 		body {
-			background-color: #0c0a09;
+			background-color: #000000;
 		}
 	</style>
 </svelte:head>
 
-<div class="min-h-screen bg-stone-950">
-	<Header logoColor="green" currentPage="status" />
+<div class="min-h-screen bg-black text-white selection:bg-green-500/30">
+	<Header currentPage="status" />
 
 	<!-- Main Content -->
-	<div class="container mx-auto px-4 py-16 min-h-[calc(100vh-73px)]">
+	<div class="container mx-auto px-4 pt-32 pb-16 min-h-[calc(100vh-73px)]">
 		<div class="max-w-4xl mx-auto">
-			<h1 class="text-4xl font-bold text-white mb-2 tracking-tight">Server Status</h1>
-			<p class="text-stone-400 mb-12">Real-time server info and online players</p>
+			<h1 class="text-5xl font-bold text-white mb-4">Server Status</h1>
+			<p class="text-zinc-400 mb-12 text-lg">Real-time server info and online players</p>
 
 			<div class="space-y-8">
 				{#each servers as server}
-					<Card.Root class="bg-stone-900 border-stone-800">
+					<Card.Root class="bg-zinc-900/30 border-zinc-800/50 backdrop-blur-sm">
 						<Card.Header>
 							<div class="flex justify-between items-start">
 								<div>
 									<Card.Title class="text-2xl text-white font-semibold">{server.name}</Card.Title>
-									<Card.Description class="text-stone-400 mt-1">
+									<Card.Description class="text-zinc-400 mt-1 font-mono text-sm">
 										{server.displayIp} • {server.version}
 									</Card.Description>
 								</div>
@@ -135,14 +135,14 @@
 						<Card.Content>
 							{#if server.status === 'online'}
 								<!-- Player Count -->
-								<div class="mb-6">
-									<div class="flex justify-between items-center mb-2">
-										<span class="text-sm text-stone-400 uppercase tracking-wider">Players Online</span>
-										<span class="text-white font-semibold">{server.players}/{server.maxPlayers}</span>
+								<div class="mb-8">
+									<div class="flex justify-between items-center mb-3">
+										<span class="text-xs text-zinc-500 uppercase tracking-wider font-medium">Players Online</span>
+										<span class="text-white font-mono">{server.players}/{server.maxPlayers}</span>
 									</div>
-									<div class="w-full bg-stone-800 rounded-full h-2">
+									<div class="w-full bg-zinc-800/50 rounded-full h-1.5 overflow-hidden">
 										<div 
-											class="bg-green-500 h-2 rounded-full transition-all duration-500"
+											class="bg-white h-full rounded-full transition-all duration-500"
 											style="width: {(server.players / server.maxPlayers) * 100}%"
 										></div>
 									</div>
@@ -151,34 +151,34 @@
 								<!-- Online Players List -->
 								{#if server.onlinePlayers.length > 0}
 									<div>
-										<h3 class="text-sm text-stone-400 uppercase tracking-wider mb-3">Currently Playing</h3>
+										<h3 class="text-xs text-zinc-500 uppercase tracking-wider mb-4 font-medium">Currently Playing</h3>
 										<div class="flex flex-wrap gap-2">
 											{#each server.onlinePlayers as player}
-												<div class="px-3 py-1.5 bg-stone-800 rounded-md text-stone-300 text-sm border border-stone-700">
+												<div class="px-3 py-1.5 bg-zinc-800/50 rounded-md text-zinc-300 text-sm border border-white/5">
 													{player}
 												</div>
 											{/each}
 										</div>
 									</div>
 								{:else}
-									<div class="text-center py-4">
-										<p class="text-stone-500 text-sm">No players online right now</p>
+									<div class="text-center py-4 border border-dashed border-zinc-800 rounded-lg">
+										<p class="text-zinc-500 text-sm">No players online right now</p>
 									</div>
 								{/if}
 							{:else if server.status === 'offline'}
-								<div class="text-center py-8">
-									<p class="text-red-400 text-lg">Server is currently offline</p>
-									<p class="text-stone-500 text-sm mt-2">Please check back later</p>
+								<div class="text-center py-12 border border-dashed border-zinc-800 rounded-lg">
+									<p class="text-red-400 text-lg font-medium">Server is currently offline</p>
+									<p class="text-zinc-500 text-sm mt-2">Please check back later</p>
 								</div>
 							{:else if server.status === 'checking'}
-								<div class="text-center py-8">
-									<p class="text-stone-400">Checking server status...</p>
+								<div class="text-center py-12">
+									<p class="text-zinc-400 animate-pulse">Checking server status...</p>
 								</div>
 							{:else if server.launchDate}
 								<!-- Coming Soon Info -->
-								<div class="text-center py-8">
-									<p class="text-stone-400 mb-2">Launches on</p>
-									<p class="text-2xl font-semibold text-amber-400">{server.launchDate}</p>
+								<div class="text-center py-12 border border-dashed border-zinc-800 rounded-lg">
+									<p class="text-zinc-500 mb-2 text-sm uppercase tracking-wider">Launches on</p>
+									<p class="text-3xl font-bold text-white">{server.launchDate}</p>
 								</div>
 							{/if}
 						</Card.Content>
@@ -189,10 +189,13 @@
 	</div>
 
 	<!-- Footer -->
-	<footer class="bg-stone-950 py-8 border-t border-stone-900">
-		<div class="container mx-auto px-4 text-center text-stone-400">
-			<p>&copy; 2025 LatinCraft. All rights reserved.</p>
-			<p class="text-sm mt-2">Not affiliated with Mojang or Microsoft | View source on <a class=" hover:underline" href="https://github.com/Static-o2/Latincraft">GitHub</a> </p>
+	<footer class="py-6 border-t border-white/5">
+		<div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-600 text-sm">
+			<p>&copy; 2025 LatinCraft</p>
+			<div class="flex items-center gap-6">
+				<span class="hidden md:inline">Not affiliated with Mojang or Microsoft</span>
+				<a class="hover:text-zinc-400 transition-colors" href="https://github.com/Static-o2/Latincraft">GitHub</a>
+			</div>
 		</div>
 	</footer>
 </div>

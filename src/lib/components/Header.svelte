@@ -4,7 +4,7 @@
 	let { logoColor = 'red', currentPage = 'home' } = $props();
 </script>
 
-<header class="bg-stone-900 border-b border-stone-800">
+<header class="">
 	<div class="container mx-auto px-4 py-4">
 		<div class="flex justify-between items-center">
 			<a href="/">
