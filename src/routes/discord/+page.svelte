@@ -40,7 +40,7 @@
 	<Header currentPage="discord" />
 
 	<!-- Main Content -->
-	<div class="container mx-auto px-4 pt-32 pb-16 min-h-[calc(100vh-73px)] flex flex-col justify-center">
+	<div class="container mx-auto px-4 pt-17 pb-16 min-h-[calc(100vh-73px)] flex flex-col justify-center">
 		<div class="max-w-xl mx-auto w-full">
 			<div class="text-center mb-16">
 				<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Join The Discord</h1>
@@ -54,7 +54,7 @@
 						Chat with friends, get updates, and join events
 					</Card.Description>
 				</Card.Header>
-				<Card.Content class="text-zinc-300 pt-6">
+				<Card.Content class="text-zinc-300 pt-2">
 					<div class="space-y-4">
 						<div class="flex items-center gap-3">
 							<div class="w-1.5 h-1.5 rounded-full bg-indigo-400"></div>

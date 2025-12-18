@@ -1,5 +1,6 @@
 <script>
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import rules from '$lib/data/rules.json';
 	
 	let { logoColor = 'red', currentPage = 'home' } = $props();
 </script>
@@ -27,7 +28,16 @@
 				>
 					Discord
 				</a>
-				<button class="text-stone-300 hover:text-orange-300 transition-colors">Rules</button>
+				<DropdownMenu.Root>
+					<DropdownMenu.Trigger class="text-stone-300 hover:text-orange-300 transition-colors outline-none">Rules</DropdownMenu.Trigger>
+					<DropdownMenu.Content class="bg-stone-900 border-stone-800">
+						{#each rules as rule}
+							<DropdownMenu.Item class="text-stone-300 hover:text-orange-300 focus:text-orange-300 focus:bg-stone-800 cursor-pointer">
+								<a href={rule.href} class="w-full">{rule.label}</a>
+							</DropdownMenu.Item>
+						{/each}
+					</DropdownMenu.Content>
+				</DropdownMenu.Root>
 			</nav>
 
 			<!-- Mobile -->
@@ -48,9 +58,18 @@
 							Discord
 						</a>
 					</DropdownMenu.Item>
-					<DropdownMenu.Item class="text-stone-300 hover:text-green-500 focus:text-green-500 focus:bg-stone-800">
-						Rules
-					</DropdownMenu.Item>
+					<DropdownMenu.Sub>
+						<DropdownMenu.SubTrigger class="text-stone-300 hover:text-green-500 focus:text-green-500 focus:bg-stone-800">
+							Rules
+						</DropdownMenu.SubTrigger>
+						<DropdownMenu.SubContent class="bg-stone-900 border-stone-800">
+							{#each rules as rule}
+								<DropdownMenu.Item class="text-stone-300 hover:text-green-500 focus:text-green-500 focus:bg-stone-800">
+									<a href={rule.href} class="w-full">{rule.label}</a>
+								</DropdownMenu.Item>
+							{/each}
+						</DropdownMenu.SubContent>
+					</DropdownMenu.Sub>
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
 		</div>

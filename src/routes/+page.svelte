@@ -140,10 +140,10 @@
 					</Card.Content>
 					<Card.Footer>
 						<Button 
-							class="w-full bg-zinc-800 hover:bg-zinc-700 text-white border-0"
-							disabled
+							class="w-full bg-zinc-800 hover:bg-zinc-700 text-white border-0 cursor-pointer"
+							onclick={() => window.open('https://forms.gle/B3dzKVxxa1ZpRFBi9', '_blank')}
 						>
-							Coming Soon...
+							Fill Out Google Form
 						</Button>
 					</Card.Footer>
 				</Card.Root>
