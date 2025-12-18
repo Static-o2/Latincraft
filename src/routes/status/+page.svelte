@@ -96,10 +96,10 @@
 	<Header currentPage="status" />
 
 	<!-- Main Content -->
-	<div class="container mx-auto px-4 pt-32 pb-16 min-h-[calc(100vh-73px)]">
+	<div class="container mx-auto px-4 pt-12 pb-16 min-h-[calc(100vh-73px)]">
 		<div class="max-w-4xl mx-auto">
-			<h1 class="text-5xl font-bold text-white mb-4">Server Status</h1>
-			<p class="text-zinc-400 mb-12 text-lg">Real-time server info and online players</p>
+			<h1 class="text-5xl font-bold text-white mb-3">Server Status</h1>
+			<p class="text-zinc-400 mb-12 text-lg">Real-time server info + online players</p>
 
 			<div class="space-y-8">
 				{#each servers as server}
