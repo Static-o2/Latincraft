@@ -17,14 +17,13 @@
 		},
 		{
 			name: 'LatinCraft Season 2',
-			status: 'coming-soon',
+			status: 'checking',
 			players: 0,
 			maxPlayers: 100,
 			onlinePlayers: [],
-			ip: null,
+			ip: 'play.latincraft.net',
 			version: '1.21.10',
-			launchDate: 'December 21st, 2025',
-			displayIp: 'TBA'
+			displayIp: 'play.latincraft.net'
 		}
 	]);
 
@@ -92,7 +91,7 @@
 	</style>
 </svelte:head>
 
-<div class="min-h-screen bg-black text-white selection:bg-green-500/30">
+<div class="min-h-screen bg-[rgb(10,10,10)] text-white selection:bg-green-500/30">
 	<Header currentPage="status" />
 
 	<!-- Main Content -->
@@ -123,10 +122,6 @@
 								{:else if server.status === 'checking'}
 									<Badge class="bg-stone-500/10 text-stone-400 border border-stone-500/20">
 										CHECKING...
-									</Badge>
-								{:else}
-									<Badge class="bg-amber-500/10 text-amber-400 border border-amber-500/20">
-										COMING SOON
 									</Badge>
 								{/if}
 							</div>
@@ -173,12 +168,6 @@
 							{:else if server.status === 'checking'}
 								<div class="text-center py-12">
 									<p class="text-zinc-400 animate-pulse">Checking server status...</p>
-								</div>
-							{:else if server.launchDate}
-								<!-- Coming Soon Info -->
-								<div class="text-center py-12 border border-dashed border-zinc-800 rounded-lg">
-									<p class="text-zinc-500 mb-2 text-sm uppercase tracking-wider">Launches on</p>
-									<p class="text-3xl font-bold text-white">{server.launchDate}</p>
 								</div>
 							{/if}
 						</Card.Content>

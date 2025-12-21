@@ -18,12 +18,12 @@
 <svelte:head>
 	<style>
 		body {
-			background-color: #000000;
+			background-color: rgb(10, 10, 10);
 		}
 	</style>
 </svelte:head>
 
-<div class="min-h-screen bg-black text-white selection:bg-white/20">
+<div class="min-h-screen bg-[rgb(10,10,10)] text-white selection:bg-white/20">
 	<Header logoColor="red" currentPage="home" />
 
 	<!-- Hero Section -->
@@ -111,7 +111,7 @@
 						<div class="flex justify-between items-start">
 							<Card.Title class="text-2xl text-white font-semibold">LatinCraft Season 2</Card.Title>
 							<a href="/status">
-								<Badge class="bg-amber-500/10 text-amber-400 border border-amber-500/20 cursor-pointer hover:bg-amber-500/20 transition-colors">COMING SOON</Badge>
+								<Badge class="bg-green-500/10 text-green-400 border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-colors">ONLINE</Badge>
 							</a>
 						</div>
 						<Card.Description class="text-zinc-400">
@@ -133,17 +133,24 @@
 								<span class="text-sm">Runs throughout winter break</span>
 							</div>
 							<div class="mt-6 p-4 bg-black/40 rounded-lg border border-zinc-800">
-								<p class="text-xs text-zinc-500 mb-2 uppercase tracking-wider">Launches</p>
-								<code class="text-amber-400 font-mono text-sm">December 21st, 2025</code>
+								<p class="text-xs text-zinc-500 mb-2 uppercase tracking-wider">Server IP</p>
+								<code class="text-green-400 font-mono text-sm">play.latincraft.net</code>
 							</div>
 						</div>
 					</Card.Content>
 					<Card.Footer>
 						<Button 
-							class="w-full bg-zinc-800 hover:bg-zinc-700 text-white border-0 cursor-pointer"
-							onclick={() => window.open('https://forms.gle/B3dzKVxxa1ZpRFBi9', '_blank')}
+							class="w-full bg-zinc-800 hover:bg-zinc-700 text-white border-0 relative cursor-pointer overflow-hidden"
+							onclick={() => copyToClipboard('play.latincraft.net')}
 						>
-							Fill Out Google Form
+							<span class="transition-all duration-300 ease-out" class:opacity-0={copied} class:scale-95={copied}>
+								Copy IP Address
+							</span>
+							{#if copied}
+								<span class="absolute inset-0 flex items-center justify-center animate-in fade-in zoom-in-95 duration-300">
+									✓ Copied!
+								</span>
+							{/if}
 						</Button>
 					</Card.Footer>
 				</Card.Root>
