@@ -17,7 +17,8 @@
 	}
 
 	function updateCountdown() {
-		const launchDate = new Date('2026-01-23T19:30:00');
+		// January 23rd, 2026 at 7:30 PM EST (UTC-5)
+		const launchDate = new Date('2026-01-24T00:30:00Z'); // 7:30 PM EST = 00:30 UTC next day
 		const now = new Date();
 		const diff = launchDate - now;
 
