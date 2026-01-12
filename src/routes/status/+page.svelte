@@ -16,14 +16,15 @@
 			displayIp: 'build.latincraft.net'
 		},
 		{
-			name: 'LatinCraft Season 2',
-			status: 'checking',
+			name: 'LatinCraft Season 3',
+			status: 'coming-soon',
 			players: 0,
 			maxPlayers: 100,
 			onlinePlayers: [],
-			ip: 'play.latincraft.net',
+			ip: null,
 			version: '1.21.10',
-			displayIp: 'play.latincraft.net'
+			launchDate: 'January 23rd, 2026 at 7:30 PM',
+			displayIp: 'TBA'
 		}
 	]);
 
@@ -119,11 +120,15 @@
 									<Badge class="bg-red-500/10 text-red-400 border border-red-500/20">
 										OFFLINE
 									</Badge>
-								{:else if server.status === 'checking'}
-									<Badge class="bg-stone-500/10 text-stone-400 border border-stone-500/20">
-										CHECKING...
-									</Badge>
-								{/if}
+							{:else if server.status === 'checking'}
+								<Badge class="bg-stone-500/10 text-stone-400 border border-stone-500/20">
+									CHECKING...
+								</Badge>
+							{:else}
+								<Badge class="bg-amber-500/10 text-amber-400 border border-amber-500/20">
+									COMING SOON
+								</Badge>
+							{/if}
 							</div>
 						</Card.Header>
 						
@@ -168,6 +173,12 @@
 							{:else if server.status === 'checking'}
 								<div class="text-center py-12">
 									<p class="text-zinc-400 animate-pulse">Checking server status...</p>
+								</div>
+							{:else if server.launchDate}
+								<!-- Coming Soon Info -->
+								<div class="text-center py-12 border border-dashed border-zinc-800 rounded-lg">
+									<p class="text-zinc-500 mb-2 text-sm uppercase tracking-wider">Launches on</p>
+									<p class="text-3xl font-bold text-white">{server.launchDate}</p>
 								</div>
 							{/if}
 						</Card.Content>
