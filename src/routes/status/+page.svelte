@@ -15,17 +15,17 @@
 			version: 'Unknown',
 			displayIp: 'build.latincraft.net'
 		},
-		{
-			name: 'LatinCraft Season 3',
-			status: 'coming-soon',
-			players: 0,
-			maxPlayers: 100,
-			onlinePlayers: [],
-			ip: null,
-			version: '1.21.10',
-			launchDate: 'January 23rd, 2026 at 7:30 PM',
-			displayIp: 'TBA'
-		}
+			{
+				name: 'LatinCraft Season 3',
+				status: 'coming-soon',
+				players: 0,
+				maxPlayers: 100,
+				onlinePlayers: [],
+				ip: null,
+				version: '1.21.10',
+				launchDate: 'January 30th, 2026 at 7:30 PM',
+				displayIp: 'TBA'
+			}
 	]);
 
 	async function checkServerStatus(server, index) {
