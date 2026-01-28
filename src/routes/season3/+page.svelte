@@ -59,7 +59,7 @@
 <div class="container">
   <div class="header">
     <div class="marquee-container">
-      <div class="marquee">★☆★ WELCOME TO THE MOST EPIC SEASON YET ★☆★</div>
+      <div class="marquee">★☆★ LIFESTEAL EDITION  ★☆★</div>
     </div>
     
     <h1 class="title">LATIN CRAFT</h1>
