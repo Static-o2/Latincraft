@@ -17,14 +17,13 @@
 		},
 			{
 				name: 'LatinCraft Season 3',
-				status: 'coming-soon',
+				status: 'checking',
 				players: 0,
-				maxPlayers: 100,
+				maxPlayers: 0,
 				onlinePlayers: [],
-				ip: null,
-				version: '1.21.10',
-				launchDate: 'January 30th, 2026 at 7:30 PM',
-				displayIp: 'TBA'
+				ip: "s3.latincraft.net",
+				version: '1.21.11',
+				displayIp: 's3.latincraft.net'
 			}
 	]);
 
