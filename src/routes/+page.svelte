@@ -3,42 +3,6 @@
 	import * as Card from '$lib/components/ui/card';
 	import { Badge } from '$lib/components/ui/badge';
 	import Header from '$lib/components/Header.svelte';
-	import { onMount } from 'svelte';
-
-	let copied = $state(false);
-	let countdown = $state({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-	function copyToClipboard(text) {
-		navigator.clipboard.writeText(text);
-		copied = true;
-		setTimeout(() => {
-			copied = false;
-		}, 2000);
-	}
-
-	function updateCountdown() {
-		// January 30th, 2026 at 7:30 PM EST (UTC-5)
-		const launchDate = new Date('2026-01-31T00:30:00Z'); // 7:30 PM EST = 00:30 UTC next day (Jan 31)
-		const now = new Date();
-		const diff = launchDate - now;
-
-		if (diff > 0) {
-			countdown = {
-				days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-				hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-				minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
-				seconds: Math.floor((diff % (1000 * 60)) / 1000)
-			};
-		} else {
-			countdown = { days: 0, hours: 0, minutes: 0, seconds: 0 };
-		}
-	}
-
-	onMount(() => {
-		updateCountdown();
-		const interval = setInterval(updateCountdown, 1000);
-		return () => clearInterval(interval);
-	});
 </script>
 
 <svelte:head>
@@ -76,122 +40,50 @@
 			</div>
 		</div>
 
-		<!-- Servers Section -->
-		<div class="w-full max-w-[1062px] mx-auto">
-			<h2 class="text-4xl font-bold text-white text-center mb-12 tracking-tight">Servers</h2>
-			
-			<div class="grid md:grid-cols-2 gap-8">
-				<!-- Creative Server -->
-				<Card.Root class="relative bg-zinc-900/30 border-zinc-700 transition-all overflow-hidden group backdrop-blur-sm">
-					<Card.Header>
-						<div class="flex justify-between items-start">
-							<Card.Title class="text-2xl text-white font-semibold">LatinCraft Creative</Card.Title>
-							<a href="/status">
-								<Badge class="bg-green-500/10 text-green-400 border border-green-500/20 cursor-pointer hover:bg-green-500/20 transition-colors">ONLINE</Badge>
-							</a>
-						</div>
-						<Card.Description class="text-zinc-400">
-							Unleash your creativity in the full creative world
-						</Card.Description>
-					</Card.Header>
-					<Card.Content class="text-zinc-300">
-						<div class="space-y-3">
-							<div class="flex items-center gap-3">
-								<div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-								<span class="text-sm">Build anything you imagine</span>
-							</div>
-							<div class="flex items-center gap-3">
-								<div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-								<span class="text-sm">WorldEdit & other plugins</span>
-							</div>
-							<div class="flex items-center gap-3">
-								<div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-								<span class="text-sm">Collaborative building</span>
-							</div>
-							<div class="mt-6 p-4 bg-black/40 rounded-lg border border-zinc-800">
-								<p class="text-xs text-zinc-500 mb-2 uppercase tracking-wider">Server IP</p>
-								<code class="text-green-400 font-mono text-sm">build.latincraft.net</code>
-							</div>
-						</div>
-					</Card.Content>
-					<Card.Footer>
-						<Button 
-							class="w-full bg-zinc-800 hover:bg-zinc-700 text-white border-0 relative cursor-pointer overflow-hidden"
-							onclick={() => copyToClipboard('build.latincraft.net')}
-						>
-							<span class="transition-all duration-300 ease-out" class:opacity-0={copied} class:scale-95={copied}>
-								Copy IP Address
-							</span>
-							{#if copied}
-								<span class="absolute inset-0 flex items-center justify-center animate-in fade-in zoom-in-95 duration-300">
-									✓ Copied!
-								</span>
-							{/if}
-						</Button>
-					</Card.Footer>
-				</Card.Root>
+		<!-- Season 4 Section -->
+		<div class="w-full max-w-4xl mx-auto">
 
-				<!-- Season 3 Server -->
-				<Card.Root class="relative bg-zinc-900/30 border-zinc-700 transition-all overflow-hidden group backdrop-blur-sm">
-					<Card.Header>
-						<div class="flex justify-between items-start">
-							<Card.Title class="text-2xl text-white font-semibold">LatinCraft Season 3</Card.Title>
-							<a href="/status">
-								<Badge class="bg-amber-500/10 text-amber-400 border border-amber-500/20 cursor-pointer hover:bg-amber-500/20 transition-colors">COMING SOON</Badge>
-							</a>
+			<Card.Root class="relative bg-zinc-900/40 border-zinc-700 overflow-hidden backdrop-blur-sm">
+				<div class="pointer-events-none absolute  inset-1 rounded-lg bg-[radial-gradient(circle_at_20%_15%,rgba(255,80,80,0.12),transparent_42%)]"></div>
+				<Card.Header class="relative">
+					<div class="flex justify-between items-start gap-4 flex-wrap">
+						<div>
+							<Card.Title class="text-3xl md:text-4xl text-white font-semibold">LatinCraft Season 4: Divided</Card.Title>
+							<Card.Description class="text-zinc-300 mt-4 text-base md:text-md max-w-2xl">
+								The world is split into four quadrants, separated by a giant wall. Each team is placed into their own quadrant.
+							</Card.Description>
 						</div>
-						<Card.Description class="text-zinc-400">
-							A brand new season begins
-						</Card.Description>
-					</Card.Header>
-					<Card.Content class="text-zinc-300">
-						<div class="space-y-3">
-							<div class="flex items-center gap-3">
-								<div class="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
-								<span class="text-sm">Fresh survival world</span>
-							</div>
-							<div class="flex items-center gap-3">
-								<div class="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
-								<span class="text-sm">New challenges & events</span>
-							</div>
-						<div class="flex items-center gap-3">
-							<div class="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
-							<span class="text-sm">idk what to put for the 3rd point</span>
-						</div>
-						<div class="mt-6 p-4 bg-black/40 rounded-lg border border-zinc-800">							<div class="flex gap-3 justify-center items-center">
-								<div class="text-center">
-									<div class="text-2xl font-bold text-amber-400 font-mono">{countdown.days}</div>
-									<div class="text-xs text-zinc-500 uppercase">Days</div>
-								</div>
-								<span class="text-amber-400 text-xl">:</span>
-								<div class="text-center">
-									<div class="text-2xl font-bold text-amber-400 font-mono">{countdown.hours.toString().padStart(2, '0')}</div>
-									<div class="text-xs text-zinc-500 uppercase">Hours</div>
-								</div>
-								<span class="text-amber-400 text-xl">:</span>
-								<div class="text-center">
-									<div class="text-2xl font-bold text-amber-400 font-mono">{countdown.minutes.toString().padStart(2, '0')}</div>
-									<div class="text-xs text-zinc-500 uppercase">Mins</div>
-								</div>
-								<span class="text-amber-400 text-xl">:</span>
-								<div class="text-center">
-									<div class="text-2xl font-bold text-amber-400 font-mono">{countdown.seconds.toString().padStart(2, '0')}</div>
-									<div class="text-xs text-zinc-500 uppercase">Secs</div>
-								</div>
-							</div>
-						</div>
+						<Badge class="bg-red-500/10 text-red-300 border border-red-400/30">SEASON EVENT</Badge>
 					</div>
+				</Card.Header>
+
+				<Card.Content class=" text-zinc-200 space-y-4">
+					<p class="text-base md:text-md leading-relaxed">
+						When the season begins, you will have 2 whole weeks to prepare for when the wall drops. Go on defense and build fortified bases and strongholds, go on offense and build TNT cannons, flying machines and build up vaults of pvp gear, or maybe go with a mix of both.
+					</p>
+					<p class="text-base md:text-md leading-relaxed">
+						On Anarchy Day, the wall drops and players can move freely between the quadrants. Last team standing wins. To keep things interesting if there's a stalemate, bonus chests filled with OP loot will start to spawn randomly and the world border will shrink until only one team remains.
+					</p>
+
+
 				</Card.Content>
-				<Card.Footer>
-					<Button 
-						class="w-full bg-zinc-800 hover:bg-zinc-700 text-white border-0"
+
+				<Card.Footer class="relative flex flex-col sm:flex-row gap-3 mt-8">
+					<Button
+						class="w-full sm:w-auto bg-white text-black hover:bg-zinc-200 cursor-pointer"
+						onclick={() => (location.href = '/discord')}
+					>
+						Join Discord for Team Selection
+					</Button>
+					<Button
+						class="w-full sm:w-auto bg-zinc-800 hover:bg-zinc-700 text-white border-0"
 						disabled
 					>
-						Coming Soon...
+						IP Drops Soon
 					</Button>
+
 				</Card.Footer>
-				</Card.Root>
-			</div>
+			</Card.Root>
 		</div>
 
 	</div>
